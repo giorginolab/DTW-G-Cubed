@@ -107,9 +107,8 @@ window_custom <- function (iw, jw, window_iw, window_jw,query.size,reference.siz
 
 sw_matrix <- window_custom(NA, NA, U1464_standardized$U1464_interpolated.V3, Picard1_standardized$Picard1_interpolated.V3, NA, NA)
 str(sw_matrix)
-aratio = nrow(sw_matrix)/ncol(sw_matrix)
 
-image(sw_matrix, useRaster = T, asp=aratio)
+image(1:nrow(sw_matrix), 1:ncol(sw_matrix), sw_matrix, useRaster = T, asp=1)
 
 sw_fun <- function(iw, jw, query.size, reference.size, ...) sw_matrix
 
