@@ -5,6 +5,8 @@ library(dtw)
 library(DescTools)
 library(astrochron)
 
+source("src/Custom Step Pattern.R")
+
 # Import Picard1 and U1464 datasets
 
 Picard1 <- read.csv("bad/PICARD_1.csv", header=TRUE, stringsAsFactors=FALSE)
@@ -104,6 +106,7 @@ window_custom <- function (iw, jw, window_iw, window_jw,query.size,reference.siz
   }
   return(slack_window)
 }
+dev.off()
 
 sw_matrix <- window_custom(NA, NA, U1464_standardized$U1464_interpolated.V3, Picard1_standardized$Picard1_interpolated.V3, NA, NA)
 str(sw_matrix)
